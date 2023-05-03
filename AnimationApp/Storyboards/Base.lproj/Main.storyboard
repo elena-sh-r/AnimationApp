@@ -7,15 +7,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Animation View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AnimationApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AnimationViewController" customModule="AnimationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ayk-yy-0Ix">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ayk-yy-0Ix" customClass="SpringView" customModule="SpringAnimation">
                                 <rect key="frame" x="55.333333333333343" y="118" width="282.33333333333326" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Am-9T-ASy">
@@ -67,7 +67,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWC-u7-j7y">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWC-u7-j7y" customClass="SpringButton" customModule="SpringAnimation">
                                 <rect key="frame" x="55.333333333333343" y="722.33333333333337" width="282.33333333333326" height="35"/>
                                 <color key="backgroundColor" red="0.72549019609999998" green="0.36862745099999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
@@ -80,6 +80,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="runSpringAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l38-Z1-aAr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -93,6 +96,14 @@
                             <constraint firstItem="Ayk-yy-0Ix" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.71875" id="nGt-Zj-Gbd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="curveAnimationLabel" destination="A84-Zy-SUO" id="h5N-bk-XDd"/>
+                        <outlet property="delayAnimationLabel" destination="byr-Pg-eWg" id="vtv-pa-Wb0"/>
+                        <outlet property="durationAnimationLabel" destination="SbN-AC-xRa" id="V98-jr-qVZ"/>
+                        <outlet property="forceAnimationLabel" destination="Aye-rn-9Og" id="D4f-D2-n2h"/>
+                        <outlet property="presetAnimationLabel" destination="1Bh-VV-FGh" id="7Ob-dA-ebv"/>
+                        <outlet property="springAnimationView" destination="Ayk-yy-0Ix" id="OcH-Nd-mCv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
